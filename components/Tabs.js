@@ -12,7 +12,6 @@
 import axios from "axios";
 console.log(axios);
 
-
 axios
 .get(`https://lambda-times-api.herokuapp.com/topics`)
 .then((res) => {

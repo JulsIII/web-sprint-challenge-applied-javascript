@@ -23,7 +23,6 @@
 // import axios from "axios";
 // console.log(axios);
 
-
 axios
 .get(`https://lambda-times-api.herokuapp.com/articles`)
 .then((res) => {
@@ -64,7 +63,6 @@ function artCardMaker(aIndex) {
     aImgCont.classList.add('img-container');
     aImg.src = aIndex.authorPhoto;
     aSpan.textContent = `By ${aIndex.authorName}`
-
 
     //hierarchy
     aCard.appendChild(aHeadline);
