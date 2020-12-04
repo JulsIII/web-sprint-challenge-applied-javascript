@@ -13,13 +13,11 @@ import axios from "axios";
 console.log(axios);
 
 
-
 axios
 .get(`https://lambda-times-api.herokuapp.com/topics`)
 .then((res) => {
     console.log(res.data.topics);
     const topics = res.data.topics;
-   
     topics.forEach(topic => { //takes callback that had array images
         // create dog card
       const newTopicTab = tabMaker(topic) //for each image use dogCardmaker, making cards. Dog Name can be changed!
@@ -31,10 +29,8 @@ axios
 
     }) 
 .catch((err) => {
-
     console.log('err1 log', err)
 });
-
 
 const topicsDiv = document.querySelector('.topics');
 
@@ -44,7 +40,7 @@ const tDiv = document.createElement('div');
 
 //set stuff
 tDiv.classList.add('tab');
-//tDiv.textContent = data.topics;
+tDiv.textContent = data;
 //appends is above
 
 
