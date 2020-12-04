@@ -29,45 +29,19 @@ axios
 .then((res) => {
     console.log(res.data.articles);
     
-    const artJava = res.data.articles.javascript;
-    const artBoot = res.data.articles.bootstrap;
-    const artTech = res.data.articles.technology;
-    const artJqury = res.data.articles.jquery;
-    const artNode = res.data.articles.node;
+    const articles = res.data.articles;
 
-    artJava.forEach(articleIndex => {
-        const newACard = artCardMaker(articleIndex)
-        console.log('done');
-        cardsDiv.appendChild(newACard);
-    });
+    Object.keys(articles).forEach(topic => {
+        
+        articles[topic].forEach(tInfo => {
+            const newACard = artCardMaker(tInfo)
+            cardsDiv.appendChild(newACard)
 
-    artBoot.forEach(articleIndex => {
-        const newACard = artCardMaker(articleIndex)
-        console.log('done');
-        cardsDiv.appendChild(newACard);
-    });
-
-    artTech.forEach(articleIndex => { 
-        const newACard = artCardMaker(articleIndex)
-        console.log('done');
-        cardsDiv.appendChild(newACard);
-    });
-
-    artJqury.forEach(articleIndex => {
-        const newACard = artCardMaker(articleIndex)
-        console.log('done'); 
-        cardsDiv.appendChild(newACard); 
-    });
-
-    artNode.forEach(articleIndex => { 
-        const newACard = artCardMaker(articleIndex)
-        console.log('done');
-        cardsDiv.appendChild(newACard); 
-    });
-
-    }) 
+        })
+    })
+}) 
 .catch((err) => {
-    console.log('err1 log', err)
+    console.log('err log', err)
 });
 
 const cardsDiv = document.querySelector('.cards-container');

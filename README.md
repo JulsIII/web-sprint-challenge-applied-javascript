@@ -30,7 +30,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 Document Object Model is an interface for web documents. It is an object-oriented representation of the active webpage. Because it interfaces with the page, the page can be editied and control outside of itself through the DOM. 
 
 2. What is an event?
-Events allow javascript to register modifications and actions on elements withing the HTML document. Events are element related handlers which are used in combination with functions. 
+Events allow javascript to register modifications and actions on elements withing the HTML document. Events are element related handlers which are used in combination with functions. Ex. 'click', 'mouseover', 'scroll'. 
 
 3. What is an event listener?
 Event listerners attach handlers to HTML elements. They facilitate the action input to trigger an event, a change withing the HTML & CSS.
@@ -89,6 +89,6 @@ After finishing your required elements, you can push your work further. These go
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's  Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+- [*] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's  Repo). **Please don't merge your own pull request**
+- [*] Add your team lead as a reviewer on the pull-request
+- [*] Your team lead will count the project as complete after receiving your pull-request

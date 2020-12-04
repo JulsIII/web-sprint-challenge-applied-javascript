@@ -26,7 +26,7 @@ axios
 
     }) 
 .catch((err) => {
-    console.log('err1 log', err)
+    console.log('err log', err)
 });
 
 const topicsDiv = document.querySelector('.topics');
