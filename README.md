@@ -27,14 +27,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+Document Object Model is an interface for web documents. It is an object-oriented representation of the active webpage. Because it interfaces with the page, the page can be editied and control outside of itself through the DOM. 
 
 2. What is an event?
+Events allow javascript to register modifications and actions on elements withing the HTML document. Events are element related handlers which are used in combination with functions. 
 
 3. What is an event listener?
+Event listerners attach handlers to HTML elements. They facilitate the action input to trigger an event, a change withing the HTML & CSS.
 
 4. Why would we convert a NodeList into an Array?
+Because we need an Array type for .ForEach loops and .Map arrays to function properly. 
 
 5. What is a component?
+A coilition of Custom Elements, Shawdow DOM Behaviors, and HTML Template Tags which are assembled with Javascript. They can be reused and are conisdered versitle assests. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -48,8 +53,8 @@ You are expected to be able to answer questions in these areas. Your responses c
 - [*] Add your team lead as collaborator on Github
 - [*] Clone your OWN version of the repository (Not Lambda's by mistake!)
 - [*] Create a new branch: `git checkout -b <firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: `git push origin <firstName-lastName>`
+- [*] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [*] Push commits: `git push origin <firstName-lastName>`
 
 #### Launching the App
 

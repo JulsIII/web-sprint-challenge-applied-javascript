@@ -18,13 +18,10 @@ axios
 .then((res) => {
     console.log(res.data.topics);
     const topics = res.data.topics;
-    topics.forEach(topic => { //takes callback that had array images
-        // create dog card
-      const newTopicTab = tabMaker(topic) //for each image use dogCardmaker, making cards. Dog Name can be changed!
-        // console log done
-      console.log('done') //confirm done making cards
-        // append to entry point
-        topicsDiv.appendChild(newTopicTab); //append the entry point area of website, and add the cards
+    topics.forEach(topic => { 
+      const newTopicTab = tabMaker(topic)
+      console.log('done');
+        topicsDiv.appendChild(newTopicTab);
     });
 
     }) 
@@ -41,8 +38,8 @@ const tDiv = document.createElement('div');
 //set stuff
 tDiv.classList.add('tab');
 tDiv.textContent = data;
-//appends is above
 
+//appends is above
 
 //return
 return tDiv;

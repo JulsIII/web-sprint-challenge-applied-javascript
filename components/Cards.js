@@ -28,27 +28,51 @@ axios
 .get(`https://lambda-times-api.herokuapp.com/articles`)
 .then((res) => {
     console.log(res.data.articles);
-    const articles = res.data.articles;
-    const artValues = Object.values(articles);
-    console.log('aArray', articles);
-    artValues.forEach(article => { //takes callback that had array images
-        //console.log('wtf',articles[0]);
-        const newACard = artCardMaker(article) //for each image use dogCardmaker, making cards. Dog Name can be changed!
-        // console log done
-        console.log('done') //confirm done making cards
-        // append to entry point
-        cardsDiv.appendChild(newACard); //append the entry point area of website, and add the cards
+    
+    const artJava = res.data.articles.javascript;
+    const artBoot = res.data.articles.bootstrap;
+    const artTech = res.data.articles.technology;
+    const artJqury = res.data.articles.jquery;
+    const artNode = res.data.articles.node;
+
+    artJava.forEach(articleIndex => {
+        const newACard = artCardMaker(articleIndex)
+        console.log('done');
+        cardsDiv.appendChild(newACard);
+    });
+
+    artBoot.forEach(articleIndex => {
+        const newACard = artCardMaker(articleIndex)
+        console.log('done');
+        cardsDiv.appendChild(newACard);
+    });
+
+    artTech.forEach(articleIndex => { 
+        const newACard = artCardMaker(articleIndex)
+        console.log('done');
+        cardsDiv.appendChild(newACard);
+    });
+
+    artJqury.forEach(articleIndex => {
+        const newACard = artCardMaker(articleIndex)
+        console.log('done'); 
+        cardsDiv.appendChild(newACard); 
+    });
+
+    artNode.forEach(articleIndex => { 
+        const newACard = artCardMaker(articleIndex)
+        console.log('done');
+        cardsDiv.appendChild(newACard); 
     });
 
     }) 
 .catch((err) => {
-
     console.log('err1 log', err)
 });
 
 const cardsDiv = document.querySelector('.cards-container');
 
-function artCardMaker(data) {
+function artCardMaker(aIndex) {
 
     ///int eles
     const aCard = document.createElement('div');
@@ -62,10 +86,11 @@ function artCardMaker(data) {
     aCard.classList.add('card');
     aHeadline.classList.add('headline');
     aAuthor.classList.add('author');
-    aHeadline.textContent = data.headline;
+    aHeadline.textContent = aIndex.headline;
     aImgCont.classList.add('img-container');
-    aImg.src = data.authorPhoto;
-    aSpan.textContent = `By ${data.authorName}`
+    aImg.src = aIndex.authorPhoto;
+    aSpan.textContent = `By ${aIndex.authorName}`
+
 
     //hierarchy
     aCard.appendChild(aHeadline);
@@ -73,6 +98,11 @@ function artCardMaker(data) {
     aAuthor.appendChild(aImgCont);
     aAuthor.appendChild(aSpan);
     aImgCont.appendChild(aImg);
+
+    //interact
+    aCard.addEventListener('click', () => {
+    console.log(aIndex.headline);
+  })
 
     //return
     return aCard;
