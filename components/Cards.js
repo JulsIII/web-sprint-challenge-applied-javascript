@@ -20,8 +20,8 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
-import axios from "axios";
-console.log(axios);
+// import axios from "axios";
+// console.log(axios);
 
 
 axios
@@ -29,11 +29,13 @@ axios
 .then((res) => {
     console.log(res.data.articles);
     const articles = res.data.articles;
-    Array.from(articles).forEach(article => { //takes callback that had array images
-        // create dog card
-      const newACard = artCardMaker(article) //for each image use dogCardmaker, making cards. Dog Name can be changed!
+    const artValues = Object.values(articles);
+    console.log('aArray', articles);
+    artValues.forEach(article => { //takes callback that had array images
+        //console.log('wtf',articles[0]);
+        const newACard = artCardMaker(article) //for each image use dogCardmaker, making cards. Dog Name can be changed!
         // console log done
-      console.log('done') //confirm done making cards
+        console.log('done') //confirm done making cards
         // append to entry point
         cardsDiv.appendChild(newACard); //append the entry point area of website, and add the cards
     });
@@ -63,7 +65,7 @@ function artCardMaker(data) {
     aHeadline.textContent = data.headline;
     aImgCont.classList.add('img-container');
     aImg.src = data.authorPhoto;
-    aSpan.textContent = `By ${authorName}`
+    aSpan.textContent = `By ${data.authorName}`
 
     //hierarchy
     aCard.appendChild(aHeadline);
